@@ -1,0 +1,20 @@
+-- create a database "movie1" if not exists
+create database if not exists movie1;
+
+-- select your user
+use deniz_goez;
+
+-- schema for the movie table
+create table movie1 (
+		index string,
+		user_id string,
+		tweet string,
+		retweets string,
+		location string,
+		created string,
+		followers int, 
+		keyword string,
+		language string)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION '/user/deniz_goez/project/to_hive_aftercorona.csv/';
