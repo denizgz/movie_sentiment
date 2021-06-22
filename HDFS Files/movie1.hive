@@ -17,5 +17,4 @@ create table movie1 (
 		language string)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
-tblproperties("skip.header.line.count"="1");
 LOCATION '/user/deniz_goez/project/to_hive_aftercorona.csv/';
