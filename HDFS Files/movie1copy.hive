@@ -1,8 +1,8 @@
 -- create a database "movie1" if not exists
-create database if not exists movie1;
+create database if not exists movie3;
 
 -- select your user
-use deniz_goez;
+use nitish_acharya;
 
 -- define schema for the movie1 table
 create table movie1 (
@@ -18,4 +18,4 @@ create table movie1 (
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 tblproperties("skip.header.line.count"="1"); 
-LOCATION '/user/deniz_goez/project/to_hive_aftercorona.csv/';
+LOCATION '/user/nitish_acharya/myhdfsto_hive_aftercorona.csv/';
