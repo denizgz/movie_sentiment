@@ -1,6 +1,6 @@
 # Big Data Project: Movies Sentiment Analysis
 
-###Sentiment analysis, which also means opinion mining or emotion AI, is the use of natural language processing, text analysis, computational linguistics, and biometrics to systematically identify, extract, quantify, and study affective states and subjective information. 
+##Sentiment analysis, which also means opinion mining or emotion AI, is the use of natural language processing, text analysis, computational linguistics, and biometrics to systematically identify, extract, quantify, and study affective states and subjective information. 
 
 In the past year the Covid-19 pandemic affected people all around the world, forcing people to change their everyday life routines and habits in their working and private life. This problem also affected producers of films and shows since the filming of such films and shows became harder for the industry resulting in delayed premieres for new seasons.
 
