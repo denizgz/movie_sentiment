@@ -1,11 +1,11 @@
 -- create a database "movie1" if not exists
-create database if not exists movie3;
+create database if not exists movierater;
 
 -- select your user
 use nitish_acharya;
 
 -- define schema for the movie1 table
-create table movie1 (
+create table movierater (
 		index string,
 		user_id string,
 		tweet string,
@@ -18,4 +18,4 @@ create table movie1 (
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 tblproperties("skip.header.line.count"="1"); 
-LOCATION '/user/nitish_acharya/myhdfsto_hive_aftercorona.csv/';
+LOAD DATA INPATH '/user/nitish_acharya/Pig_update4/part-m-00000'   INTO TABLE movierater;

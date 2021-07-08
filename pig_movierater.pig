@@ -1,6 +1,5 @@
-logs = LOAD '/user/hive/warehouse/topserie/to_hive_aftercorona.csv' USING PigStorage(',') AS (index:int,user_id:chararray, tweet:chararray,retweets:chararray,location:chararray,created:chararray,followes:chararray,keyword:chararray,language:chararray); 
-
-
+logs = LOAD '/user/hive/warehouse/topserie/to_hive_aftercorona.csv' USING PigStorage(',') 
+AS (index:int,user_id:chararray, tweet:chararray,retweets:chararray,location:chararray,created:chararray,followes:chararray,keyword:chararray,language:chararray); 
 
 --only take the unique values
  remove_duplicates = DISTINCT logs;
