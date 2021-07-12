@@ -7,5 +7,6 @@ streamlit
 plotly
 wordcloud
 nltk
-
+Image
+pillow
 
