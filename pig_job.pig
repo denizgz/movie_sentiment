@@ -13,6 +13,9 @@ replace_data = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,crea
 --replace # from the keyword column
 replace_data1 = FOREACH replace_data  GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),REPLACE(keyword,'#',''); 
 
+--replace with regex
+replace_data1 = FOREACH replace_data GENERATE REPLACE (tweet)(line,'([^a-zA-Z\\s]+)','');
+
 --tokenize tweet column
 replace_data2 = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),TOKENITE(tweet); 
 
