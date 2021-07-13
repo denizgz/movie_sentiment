@@ -5,11 +5,18 @@ AS (index:int,user_id:chararray, tweet:chararray,retweets:chararray,location:cha
  remove_duplicates = DISTINCT logs;
 
 --put the text column into lowecase
-replace_data = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),LOWER(tweet); 
+replace_data = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),LOWER(tweet);
 
---remove # from the keyword column
+--Returns a copy of a string with only trailing white space removed
+replace_data = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),RTRIM(tweet); 
+
+--replace # from the keyword column
 replace_data1 = FOREACH replace_data  GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),REPLACE(keyword,'#',''); 
+
+--tokenize tweet column
+replace_data2 = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),TOKENITE(tweet); 
 
 -- store it in the hive table
 dump replace_data1
 STORE replace_data1 INTO '/user/nitish_acharya/pig_update4/' USING PigStorage (',');
+
