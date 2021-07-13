@@ -26,15 +26,27 @@ Finally, used Docker to containerize everything.
 # Content Description
 
 Archiv : All the files that were used during the project which is not directly related to final output
+
 Data: Data from hive table, rotton tomatoes and others
+
 data_top10_series: Json files from the twitter data and raw csv twitter file
+
 streamlit_app: The folder with all the requirements for streamlit app and the docker 
+
 0_Twitter_API: The python file used to read twitter data through tweepy and export to raw csv file
+
 1_hive: Pre processed in python so that its easy to read in hive
+
 data_analysis: EDA of twitter data 
+
 hive_job: command lines to create hive table
+
 pig_job: pre processing command lines in pig
+
 sentiment_eval : Evaluation of sentiment analysis
+
 sentiment_analysis_streamlit: Final python file to save different dataframes for creating streamlit app
+
 streamlit_app.tar: For deployment in caprover
+
 vader_compound: Accuracy check of vader
