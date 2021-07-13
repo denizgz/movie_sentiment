@@ -8,7 +8,7 @@ AS (index:int,user_id:chararray, tweet:chararray,retweets:chararray,location:cha
 replace_data = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),LOWER(tweet); 
 
 --remove # from the keyword column
-replace_data1 = FOREACH replace_data  GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),REPLACE(keyword,'#',','); 
+replace_data1 = FOREACH replace_data  GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),REPLACE(keyword,'#',''); 
 
 -- store it in the hive table
 dump replace_data1
