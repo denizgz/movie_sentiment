@@ -4,7 +4,7 @@ AS (index:int,user_id:chararray, tweet:chararray,retweets:chararray,location:cha
 --only take the unique values
  remove_duplicates = DISTINCT logs;
 
---put the text column into lowecase
+--put the text column into lowercase
 replace_data = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),LOWER(tweet);
 
 --Returns a copy of a string with only trailing white space removed
@@ -13,11 +13,11 @@ replace_data = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,crea
 --replace # from the keyword column
 replace_data1 = FOREACH replace_data  GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),REPLACE(keyword,'#',''); 
 
---replace with regex
+--replace special characters with regex
 replace_data1 = FOREACH replace_data GENERATE REPLACE (tweet)(line,'([^a-zA-Z\\s]+)','');
 
 --tokenize tweet column
-replace_data2 = FOREACH logs GENERATE (index,user_id,tweet,retweets,location,created,followes,keyword,language),TOKENITE(tweet); 
+replace_data2 = FOREACH logs GENERATE(index,user_id,tweet,retweets,location,created,followes,keyword,language),TOKENITE(tweet); 
 
 -- store it in the hive table
 dump replace_data1
