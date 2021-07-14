@@ -17,7 +17,7 @@ replace_data1 = FOREACH replace_data  GENERATE (index,user_id,tweet,retweets,loc
 replace_data1 = FOREACH replace_data GENERATE REPLACE (tweet)(line,'([^a-zA-Z\\s]+)','');
 
 --tokenize tweet column
-replace_data2 = FOREACH logs GENERATE(index,user_id,tweet,retweets,location,created,followes,keyword,language),TOKENITE(tweet); 
+replace_data2 = FOREACH logs GENERATE(index,user_id,tweet,retweets,location,created,followes,keyword,language),TOKENIZE(tweet); 
 
 -- store it in the hive table
 dump replace_data1
